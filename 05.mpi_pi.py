@@ -10,7 +10,8 @@ def local_loop(num_steps,begin,end):
     sum = 0
     # 4/(1+x^2)
     for i in range(begin,end):
-        
+        x = (i + 0.5) * steps
+        sum = sum + 4.0 / (1.0 + x * x)
     print (sum)
     return sum    
 
