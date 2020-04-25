@@ -31,11 +31,11 @@ def Pi(num_steps):
     
     # cari local_sum
     # local_sum merupakan hasil dari memanggil fungsi local_loop
-    
+    local_sum = local_loop(num_steps, int(rank * new_var), int((rank + 1) * new_var))
     
     # lakukan penjumlahan dari local_sum proses-proses yang ada ke proses 0
     # bisa digunakan reduce atau p2p sum
-    
+    sums = comm.allreduce(local_sum,op=MPI.SUM)
     
     # jika saya proses dengan rank 0  maka tampilkan hasilnya
     if rank == 0:
