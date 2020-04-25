@@ -1,5 +1,5 @@
 # import mpi4py
-
+from mpi4py import MPI
 
 # buat fungsi dekomposisi bernama local_loop 
 # local_loop akan menghitung setiap bagiannya
